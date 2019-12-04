@@ -14,7 +14,8 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animatorDialogueBox;
     public Animator animatorChoiceBox;
-    public static bool isDiaEnded = false;
+    [Header("Jia Hao's Edits")]
+    public static bool isDiaEnded = false; //Jia Hao
 
 
     public bool endofSentence;
@@ -57,11 +58,12 @@ public class DialogueManager : MonoBehaviour
         FindObjectOfType<DialogueManager>().animatorDialogueBox.SetBool("isOpen", false);
         print(endofSentence);
         FindObjectOfType<DialogueTrigger>().isDialogueRan = true;
-        isDiaEnded = true;
+        isDiaEnded = true; //JH
     }
 
     public void RepeatedDialogue(Dialogue dialogue)
     {
+        isDiaEnded = false;
         animatorDialogueBox.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;

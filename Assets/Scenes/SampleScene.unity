@@ -8279,6 +8279,7 @@ GameObject:
   - component: {fileID: 633617832}
   - component: {fileID: 633617833}
   - component: {fileID: 633617835}
+  - component: {fileID: 633617838}
   - component: {fileID: 633617836}
   - component: {fileID: 633617834}
   - component: {fileID: 633617837}
@@ -8378,7 +8379,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633617831}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee8947863725eb64cae2d10b06e53495, type: 3}
   m_Name: 
@@ -8433,6 +8434,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.62, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &633617838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633617831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f230e0f5e313264b98b4270910dc053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalspeed: 3
+  verticalspeed: 3
+  animator: {fileID: 633617834}
+  isInDialoge: 0
 --- !u!4 &634227253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4368285449340250239, guid: 9db1bd7ce510d464a9b457702eaedcb5,
@@ -10070,7 +10087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentNode: {fileID: 0}
   minDistance: 0.1
-  speed: 10
+  speed: 4.5
 --- !u!1001 &767806949
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\LocationManager.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\MoveBoss.cs" />
+    <Compile Include="Assets\Scripts\Jia Hao\playerController_JH.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\TimeDayCountdown.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\Choice2Trigger.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\ChoiceManager.cs" />

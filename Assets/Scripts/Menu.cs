@@ -8,10 +8,16 @@ public class Menu : MonoBehaviour
     public GameObject nextScreen;
     public CoreManager core;
 
-    public void playgame()
+    public void playgameMale()
     {
         core = CoreManager.mainframe;
         core.setCharState(0); //Male
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void playgameFemale()
+    {
+        core = CoreManager.mainframe;
+        core.setCharState(1); //Male
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

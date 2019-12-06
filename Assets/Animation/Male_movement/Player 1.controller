@@ -216,7 +216,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: x
-    m_EventTreshold: -0.002
+    m_EventTreshold: -0.001
   - m_ConditionMode: 1
     m_ConditionEvent: x_move
     m_EventTreshold: 0
@@ -634,3 +634,17 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 480, y: 252, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102220735193044880}
+--- !u!1109 &1109085679210344646
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102220735193044880}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1

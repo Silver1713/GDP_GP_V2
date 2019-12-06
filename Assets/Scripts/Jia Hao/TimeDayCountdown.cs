@@ -17,6 +17,8 @@ public class TimeDayCountdown : MonoBehaviour
     private bool blinking;
     IEnumerator blinker;
 
+    bool showLoseGui = false;
+
     public float waitTimeBeforeGameOver;
 
     private void Awake()
@@ -141,7 +143,12 @@ public class TimeDayCountdown : MonoBehaviour
 
     public void loseGame()
     {
-        Debug.Log("Player Have Lost.");
+        if (showLoseGui == false)
+        {
+            showLoseGui = true;
+            CoreManager.mainframe.loseGame();
+        }
+        
         if (countdownFunc != null)
         {
             StopCoroutine(countdownFunc);

@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CoreManager : MonoBehaviour
 {
+     
+    
 
     //Core/Data/Game Manager should be a singleton
     //They should not have more then one instances
@@ -78,13 +81,37 @@ public class CoreManager : MonoBehaviour
         }
     }
 
-    public void loseGame()
+    public void loseGame(int reasons)
     {
         Transform loseUI = winLoseGui.GetChild(1);
+        
         if (loseUI != null)
         {
             Transform cloneUI = Instantiate(loseUI, Canvas) as Transform;
+            TextMeshProUGUI title = cloneUI.GetChild(0).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI body = cloneUI.GetChild(1).GetComponent<TextMeshProUGUI>();
+            switch (reasons)
+            {
+                case 0:
+                    //Lose by timing
+                    title.SetText("YOU HAVE FAILED");
+                    body.SetText("You failed to complete today's task!\n " +
+                        "Reasons: You failed to meet today's dateline.\n" +
+                        "Tips:\n" + "1. ---\n" + "2. ---\n" + "3. ----\n" );
+                    break;
+
+                case 1:
+                    //Lose by merit being limit
+
+                    title.SetText("YOU HAVE BEEN FIRED");
+                    body.SetText("You have been called to find a new internship.\n" +
+                        "Reasons: You been very disrespectful to the superiors and senior collegue.\n" +
+                        "Tips:\n" + "1. ---\n" + "2. ---\n" + "3.---\n"
+                        );
+                    break; 
+            }
             cloneUI.gameObject.SetActive(true);
+            
         }
     }
 

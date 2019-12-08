@@ -19,18 +19,22 @@ public class PointSystem : MonoBehaviour
     void Update()
     {
         merits.SetText("Merits: " + Score);
-        if (FindObjectOfType<DialogueTrigger>().dialogue.choicetext == GameObject.Find("Choice1").GetComponentInChildren<TextMeshProUGUI>().text && 
-            FindObjectOfType<ChoiceManager>().choice1isPicked == true)
+        if (FindObjectOfType<ChoiceManager>().choice1isPicked == true)
         {
-            Score += 10;
+            Score -= 10;
             FindObjectOfType<ChoiceManager>().choice1isPicked = false;
             return;
         }
-        if (FindObjectOfType<DialogueTrigger>().dialogue.choice2text == GameObject.Find("Choice2").GetComponentInChildren<TextMeshProUGUI>().text &&
-            FindObjectOfType<ChoiceManager>().choice2isPicked == true)
+        if (FindObjectOfType<ChoiceManager>().choice2isPicked == true)
         {
-            Score -= 10;
+            Score += 0;
             FindObjectOfType<ChoiceManager>().choice2isPicked = false;
+            return;
+        }
+        if (FindObjectOfType<ChoiceManager>().choice3isPicked == true)
+        {
+            Score += 10;
+            FindObjectOfType<ChoiceManager>().choice3isPicked = false;
             return;
         }
     }

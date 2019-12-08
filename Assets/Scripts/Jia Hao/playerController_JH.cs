@@ -10,6 +10,7 @@ public class playerController_JH : MonoBehaviour
     public float horizontalspeed = 3f;
     public float verticalspeed = 3f;
     public Animator animator;
+    public bool debugMode;
 
 
     int left = 1;
@@ -19,20 +20,32 @@ public class playerController_JH : MonoBehaviour
 
     [Header("Dialouge Handler")]
     public bool isInDialoge = false;
+    private void Awake()
+    {
+        if (!debugMode && gameObject.name == "Debug")
+        {
+            Destroy(transform.gameObject);
+        }
+        else return;
+    }
+
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
-        isInDialoge = DialogueManager.isDiaEnded != true;
+        isInDialoge = FindObjectOfType<DialogueManager>().isDiaEnded != true;
     }
 
     void Update()
     {
-        isInDialoge = DialogueManager.isDiaEnded != true;
-        Debug.Log(isInDialoge);
-        if (isInDialoge) return;
+        isInDialoge = FindObjectOfType<DialogueManager>().isDiaEnded != true;
+        
 
         var rigidbody2d = GetComponent<Rigidbody2D>();
-
+        if (isInDialoge) { rigidbody2d.velocity = Vector2.zero;
+            animator.SetTrigger("move");
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", 0);
+            return; }
         rigidbody2d.velocity = new Vector2(joystick.Horizontal * horizontalspeed,
                                            joystick.Vertical * verticalspeed);
 

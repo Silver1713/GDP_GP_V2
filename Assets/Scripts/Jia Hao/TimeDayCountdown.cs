@@ -146,7 +146,7 @@ public class TimeDayCountdown : MonoBehaviour
         if (showLoseGui == false)
         {
             showLoseGui = true;
-            CoreManager.mainframe.loseGame();
+            CoreManager.mainframe.loseGame(0);
         }
         
         if (countdownFunc != null)

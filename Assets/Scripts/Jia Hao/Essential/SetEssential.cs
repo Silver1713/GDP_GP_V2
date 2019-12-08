@@ -10,7 +10,7 @@ public class SetEssential : MonoBehaviour
     /// </summary>
     /// 
     [Header("Essential Controls")]
-    [Tooltip("Set if an objecct is essential and keep them when changing scene")] public bool Essential;
+    [Tooltip("Set if an object is essential and keep them when changing scene")] public bool Essential;
 
 
     private void Start()

@@ -13,9 +13,12 @@ public class Dialogue //Remove monobehaviour, there is no need of any interventi
     public string[] sentencesAfterChoice1;
     [TextArea(3, 10)]
     public string[] sentencesAfterChoice2;
+    [TextArea(3, 10)]
+    public string[] sentencesAfterChoice3;
 
     public string choicetext;
     public string choice2text;
+    public string choice3text;
 
     [TextArea(3, 10)]
     public string[] RepeatedsentencesAfterTRUEdialogue;

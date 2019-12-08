@@ -14,10 +14,10 @@ public class MoveBoss : MonoBehaviour
     private Rigidbody2D transformRigidBody;
     private Transform[] nodeList;
     public float minDistance = float.Epsilon;
-    bool inDialouge;
+    public bool inDialouge;
     public float speed;
     private Vector3 targetPosition;
-    bool comeBack = false;
+    public bool comeBack = false;
    
 
     private void Start()
@@ -33,7 +33,7 @@ public class MoveBoss : MonoBehaviour
 
     private void Update()
     {
-
+        
 
         if (Vector2.Distance(transform.position, currentNode.position) <= minDistance)
         {
@@ -62,7 +62,7 @@ public class MoveBoss : MonoBehaviour
                 inDialouge = true;
                 GetComponent<DialogueTrigger>().TriggerDialogue();
                
-            } else if (DialogueManager.isDiaEnded == true)
+            } else if (FindObjectOfType<DialogueManager>().isDiaEnded == true)
             {
                 if (cIndex > 0)
                 {

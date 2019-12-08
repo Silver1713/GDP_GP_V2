@@ -11,11 +11,12 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI choice1Text;
     public TextMeshProUGUI choice2Text;
+    public TextMeshProUGUI choice3Text;
 
     public Animator animatorDialogueBox;
     public Animator animatorChoiceBox;
     [Header("Jia Hao's Edits")]
-    public static bool isDiaEnded = false; //Jia Hao
+    public bool isDiaEnded = false; //Jia Hao
 
 
     public bool endofSentence;
@@ -29,6 +30,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        isDiaEnded = false;
+
         animatorDialogueBox.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
@@ -43,7 +46,8 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0 && FindObjectOfType<DialogueTrigger>().isChoicesRunning == false)
+        if (sentences.Count == 0 && (FindObjectOfType<DialogueTrigger>().isChoicesRunning == false && FindObjectOfType<DialogueTrigger1>().isChoicesRunning == false &&
+            FindObjectOfType<DialogueTrigger2>().isChoicesRunning == false && FindObjectOfType<DialogueTrigger3>().isChoicesRunning == false))
         {
             EndDialogue();
             return;
@@ -56,8 +60,21 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         FindObjectOfType<DialogueManager>().animatorDialogueBox.SetBool("isOpen", false);
-        print(endofSentence);
         FindObjectOfType<DialogueTrigger>().isDialogueRan = true;
+
+        if (FindObjectOfType<MaryTrigger>().MaryTriggers == true)
+        {
+            FindObjectOfType<DialogueTrigger1>().isDialogueRan = true;
+        }
+        if (FindObjectOfType<AlexTrigger>().AlexTriggers == true)
+        {
+            FindObjectOfType<DialogueTrigger2>().isDialogueRan = true;
+        }
+
+        if(FindObjectOfType<TableTrigger>().isTableDia2Prompted == true)
+        {
+            FindObjectOfType<DialogueTrigger3>().isDialogueRan = true;
+        }
         isDiaEnded = true; //JH
     }
 
@@ -79,11 +96,9 @@ public class DialogueManager : MonoBehaviour
 
     public void NextDialogue(Dialogue dialogue)
     {
-        print("running");
         animatorDialogueBox.SetBool("isOpen", true);
 
-        sentences.Clear();
-
+        
         if (FindObjectOfType<ChoiceManager>().choice1isPicked == true)
         {
             foreach (string sentence in dialogue.sentencesAfterChoice1)
@@ -101,6 +116,15 @@ public class DialogueManager : MonoBehaviour
             }
             DisplayNextSentence();
         }
+
+        if (FindObjectOfType<ChoiceManager>().choice3isPicked == true)
+        {
+            foreach (string sentence in dialogue.sentencesAfterChoice3)
+            {
+                sentences.Enqueue(sentence);
+            }
+            DisplayNextSentence();
+        }
     }
 
     public void Choice1(Dialogue choices)
@@ -113,5 +137,10 @@ public class DialogueManager : MonoBehaviour
     {
         animatorChoiceBox.SetBool("isOpen", true);
         choice2Text.text = choices2.choice2text;
+    }
+    public void Choice3(Dialogue choices3)
+    {
+        animatorChoiceBox.SetBool("isOpen", true);
+        choice3Text.text = choices3.choice3text;
     }
 }

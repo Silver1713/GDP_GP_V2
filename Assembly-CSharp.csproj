@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{020D70AD-4EF5-BE79-57EC-4AEA2BC7057D}</ProjectGuid>
+    <ProjectGuid>{D780E733-32E5-71CC-32EE-E07DD2645D84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CharacterManager.cs" />
+    <Compile Include="Assets\characterSelector.cs" />
     <Compile Include="Assets\CoreManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
@@ -69,19 +70,34 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\Essential\SetEssential.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\LocationManager.cs" />
+    <Compile Include="Assets\Scripts\Jia Hao\LocationManager1.cs" />
+    <Compile Include="Assets\Scripts\Jia Hao\LocationManager2.cs" />
+    <Compile Include="Assets\Scripts\Jia Hao\MoveAlex.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\MoveBoss.cs" />
+    <Compile Include="Assets\Scripts\Jia Hao\MoveMary.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\playerController_JH.cs" />
     <Compile Include="Assets\Scripts\Jia Hao\TimeDayCountdown.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\AlexTrigger.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\Choice2Trigger.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\Choice3Trigger.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\ChoiceManager.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\collsion.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\DialogueTrigger1.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\DialogueTrigger2.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\DialogueTrigger3.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\Interacting.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\MaryTrigger.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\movement2d.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\Objective.cs" />
     <Compile Include="Assets\Scripts\Jia Jun\PointSystem.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\ReflectionTrigger.cs" />
+    <Compile Include="Assets\Scripts\Jia Jun\TableTrigger.cs" />
     <Compile Include="Assets\Scripts\Jian Qiang\GridManager.cs" />
     <Compile Include="Assets\Scripts\Jian Qiang\playerController.cs" />
     <Compile Include="Assets\Scripts\Jian Qiang\playerSelection.cs" />
@@ -107,25 +123,25 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Editor.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Editor.dll</HintPath>
     </Reference>
     <Reference Include="XiaomiSupport">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/2018.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -329,19 +345,19 @@
       <HintPath>D:/2018.4.11f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="ChannelPurchase">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
     </Reference>
     <Reference Include="UnityStore">
-      <HintPath>D:/GDP/Compile/GDP_12032019/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
+      <HintPath>D:/GDP/Compile/GDP_12062019/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/2018.4.11f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

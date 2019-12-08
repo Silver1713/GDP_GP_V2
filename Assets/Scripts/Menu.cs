@@ -8,17 +8,23 @@ public class Menu : MonoBehaviour
     public GameObject nextScreen;
     public CoreManager core;
 
-    public void playgameMale()
+    private void Start()
     {
         core = CoreManager.mainframe;
-        core.setCharState(0); //Male
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    public void playgameFemale()
+
+    public void playgame()
     {
-        core = CoreManager.mainframe;
-        core.setCharState(1); //Male
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (characterSelector.mSelected == characterSelector.fSelected) return;
+        if (characterSelector.mSelected == 1)
+        {
+            core.setCharState(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        } else
+        {
+            core.setCharState(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void navigateScreen()
